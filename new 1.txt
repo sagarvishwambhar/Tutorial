@@ -1,0 +1,34 @@
+CREATE TABLE #JobsTable ([Status] varchar(11), [ID] int);
+
+INSERT INTO #JobsTable
+    ([Status], [ID])
+VALUES
+    ('Open', 1),
+    ('Open', 2),
+    ('Open', 3),
+    ('Open', 4),
+    ('In Progress', 5),
+    ('In Progress', 6),
+    ('In Progress', 7),
+    ('Closed', 8),
+    ('Closed', 9),
+    ('Closed', 10),
+    ('Closed', 11)
+;
+
+SELECT  Status,COUNT(Status) StatusCount FROM    ( SELECT    CASE WHEN Status != 'Closed' THEN 'Other' ELSE Status
+END AS Status FROM JobsTable ) t GROUP BY Status ORDER BY StatusCount DESC   
+
+
+
+SELECT  [Status] ,
+        COUNT([Status]) StatusCount
+FROM    ( SELECT    CASE WHEN [Status] != 'Closed' THEN 'Other'
+                         ELSE [Status]
+                    END AS [Status]
+          FROM      #JobsTable
+        ) t
+GROUP BY [Status]
+ORDER BY StatusCount DESC   
+
+DROP TABLE #JobsTable

@@ -1,0 +1,30 @@
+****CREATE TABLE************
+
+CREATE TABLE HCL(id int NOT NULL AUTO_INCREMENT,employeename VARCHAR(255) NOT NULL,PRIMARY KEY(id));
+
+*****Alter Table Add ******** mobileno
+
+ALTER TABLE hcl  ADD mobileno varchar(40) NOT NULL;  
+
+****Alter Table Modify column varchar to int *******mobileno
+
+ALTER TABLE hcl MODIFY mobileno int(50) NOT NULL;
+
+*****Drop Column *****Mobile no
+
+ALTER TABLE hcl DROP COLUMN mobileno;
+
+*******Rename Column 
+
+ALTER TABLE hcl CHANGE COLUMN employeename hclemployeename varchar(255);
+
+*******Rename Table nam 
+
+ALTER TABLE hcl  RENAME TO mainhcl; 
+
+******* TRUNCATE 
+
+TRUNCATE TABLE mainhcl;
+
+**************************************************************************
+

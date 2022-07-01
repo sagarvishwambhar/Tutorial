@@ -1,0 +1,53 @@
+****** Select All Conditions ************
+
+CREATE TABLE Employee(id int NOT NULL AUTO_INCREMENT,employeename VARCHAR(255) NOT NULL, salary VARCHAR(255) NOT NULL, experience int(11) NOT NULL, PRIMARY KEY(id));
+
+********************
+
+INSERT INTO Employee (`id`, `employeename`, `salary`, `experience`) VALUES
+(1, 'abcd', '50000', 4),
+(2, 'pqr', '56000', 6),
+(3, 'oop', '5000', 2),
+(4, 'qqq', '7000', 1),
+(5, 'mmm', '70000', 2),
+(6, 'vvv', '8000', 6),
+(7, 'ppp', '6000', 8),
+(8, 'sss', '3000', 10),
+(9, 'xyz', '70000', 2),
+(10, 'mno', '9000', 1);
+
+************************************************************
+***************AND
+
+SELECT * FROM `employee` WHERE salary="50000" AND experience>=4
+
+**************OR
+
+SELECT * FROM `employee` WHERE salary="50000" OR experience>=4
+
+************* GROUP by 
+
+SELECT experience FROM `employee` GROUP BY experience
+
+**************Order By
+
+SELECT * FROM `employee` ORDER BY experience DESC
+
+***************LIMIT
+
+SELECT * FROM `employee` LIMIT 4;
+
+***********Like 
+
+SELECT *  FROM employee WHERE employeename LIKE 'p%'
+
+*******************************************IN
+
+SELECT *  FROM employee WHERE employeename IN('pqr', 'ppp');  
+
+*********************************NOT In 
+
+***********SELECT *  FROM employee WHERE experience BETWEEN 1 AND 6
+
+
+
